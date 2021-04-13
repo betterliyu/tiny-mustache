@@ -1,11 +1,17 @@
 import { Scanner } from './Scanner';
+import { Token } from './Token';
 
 export const parse = <T>(template: string, data: T): string => {
-  // <div>{{ name }}</div>
-  // const scanner = new Scanner(template);
-  // scanner.scan();
 
-  console.log(template.trim());
+  const scanner = new Scanner(template);
+  const tokens = scanner.tokenization();
 
-  return template;
+  // TODO: merge tokens and data
+  console.dir(tokens);
+
+  return render(tokens, data);
+}
+
+const render = <T>(tokens: Token[], data: T): string => {
+  return '';
 }
