@@ -6,7 +6,7 @@ export type Token = [string, string, Token[]?];
 export const nestToken = (tokens: Token[]) => {
   const nestedTokens: Token[] = [];
   let parentTokens: Token[] = nestedTokens;
-  let stack: Token[] = [];
+  let stack: Token[] = []; // 用栈来保存递归上层信息
 
   for (let index = 0, len = tokens.length; index < len; index++) {
     const token = tokens[index];

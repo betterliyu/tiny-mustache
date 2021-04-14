@@ -41,7 +41,7 @@ export class Scanner {
   /**
    * 把模板字符串转换为 tokens 数组
    */
-  public tokenization() {
+  public tokenizing() {
     while (!this.eos()) {
 
       const text = this.scanUntil(Tags.Begin);
